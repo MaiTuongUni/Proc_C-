@@ -13,5 +13,9 @@ namespace R2S.Training.Dao
         double ComputeOrderTotal(int orderId);
 
         bool addLineItem(LineItem lineItem);
+
+        bool updateLineItem(LineItem lineItem);
+
+        bool deleteLineItem(LineItem lineItem);
     }
 }

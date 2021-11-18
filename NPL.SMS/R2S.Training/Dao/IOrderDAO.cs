@@ -11,8 +11,12 @@ namespace R2S.Training.Dao
     {
         List<Order> getAllOrdersByCustomerId(int cutomerId);
 
+        Order getOrderById(int order_id);
+
         bool addOrder(Order order);
 
         bool updateOrderTotal(int orderId);
+
+        bool deketeOrderById(int order_id);
     }
 }

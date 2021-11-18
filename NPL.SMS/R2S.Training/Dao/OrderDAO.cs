@@ -29,6 +29,11 @@ namespace R2S.Training.Dao
             }
         }
 
+        public bool deketeOrderById(int order_id)
+        {
+            return db.deleteOrderById(order_id);
+        }
+
         public List<Order> getAllOrdersByCustomerId(int cutomerId)
         {
             try
@@ -50,6 +55,29 @@ namespace R2S.Training.Dao
                     }
                 }
                 return listOrder;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public Order getOrderById(int order_id)
+        {
+            try
+            {
+                Order order = null;
+                DataTable dt = db.searchOrderById(order_id);
+                if (dt.Rows.Count > 0)
+                {
+                        int productId = int.Parse(dt.Rows[0]["order_id"].ToString());
+                        string dateTime = dt.Rows[0]["order_date"].ToString();
+                        int customerId = int.Parse(dt.Rows[0]["customer_id"].ToString());
+                        int employee_id = int.Parse(dt.Rows[0]["product_id"].ToString());
+                        double total = double.Parse(dt.Rows[0]["total"].ToString());
+                    order = new Order(productId, dateTime, customerId, employee_id, total);
+                }
+                return order;
             }
             catch
             {

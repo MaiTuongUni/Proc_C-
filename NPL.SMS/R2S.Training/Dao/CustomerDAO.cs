@@ -66,6 +66,25 @@ namespace R2S.Training.Dao
             }
         }
 
+        public Customer getCustomerById(int customer_id)
+        {
+            try
+            {
+                Customer customer = null;
+                DataTable dt = db.getAllCustomer();
+                if (dt.Rows.Count > 0)
+                {
+                    customer = new Customer(int.Parse(dt.Rows[0]["customer_id"].ToString()), dt.Rows[0]["customer_name"].ToString());
+
+                }
+                return customer;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public bool updateCustomer(Customer customer)
         {
             try

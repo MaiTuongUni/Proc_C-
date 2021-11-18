@@ -1,4 +1,4 @@
---Proc for retrive all customer
+﻿--Proc for retrive all customer
 create proc search_AllOrder 
 as 
 select customer_id, customer_name from Customer;
@@ -114,6 +114,141 @@ begin try
 	begin tran
 	update Orders set total = (select SUM(quantity*price) from LineItem where order_id=@order_id);
 	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+
+
+ -- Tìm kiếm khách hàng theo id
+ create proc search_CustomerById
+(@customer_id int)
+as
+select * from Customer where customer_id=@customer_id;
+go
+
+--  Xóa đơn đặt hàng
+ create proc delete_OrderById
+(@order_id int)
+as
+begin try
+	begin tran
+	delete from LineItem where order_id = @order_id;
+	delete from Orders where order_id = @order_id;
+	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+
+
+--  Tìm kiếm đơn đặt hàng theo id
+ create proc search_OrderById
+(@order_id int)
+as
+select * from Orders where order_id=@order_id;
+go
+
+
+--  Cập nhật LineItem
+ create proc update_LineItemById
+(@order_id int
+,@product_id int
+,@quantity int
+,@price float)
+as
+  update LineItem set quantity=@quantity, price=@price where order_id=@order_id and product_id=@product_id;
+go
+
+
+--  Xóa LineItem theo id
+ create proc delete_LineItemById
+(@order_id int
+,@product_id int)
+as
+begin try
+	begin tran
+	delete from LineItem where order_id = @order_id and product_id=@product_id;
+	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+
+--  Tìm kiếm nhân viên theo id
+ create proc search_EmployeeId
+(@employee_id int)
+as
+select * from Employee where employee_id=@employee_id;
+go
+
+--  Thêm mới employee 
+ create proc insert_Employee
+(@employee_id int
+,@employee_name nvarchar(100)
+,@salary float
+,@supervisor_id int)
+as
+begin try
+	begin tran
+	insert into Employee(employee_id,employ_name,salary,supervisor_id) values (@employee_id,@employee_name,@salary,@supervisor_id);
+	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+
+--  Cập nhật employee theop id
+ create proc update_Employee
+(@employee_id int
+,@employee_name nvarchar(100)
+,@salary float
+,@supervisor_id int)
+as
+begin try
+	begin tran
+	update Employee set employ_name=@employee_name,salary=@salary,@supervisor_id=supervisor_id where employee_id =@employee_id;
+	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+
+--  Tìm kiếm sản phẩm
+ create proc search_ProductById
+(@product_id int)
+as
+select * from Product where product_id=@product_id;
+go
+
+--  Thêm mới sản phẩm
+ create proc insert_Product
+(@product_name int
+,@product_price float)
+as
+begin try
+	begin tran
+	insert into Product(product_name,product_price) values (@product_name,@product_price);
+	commit tran
+end try
+begin catch
+	rollback tran
+end catch
+go
+--  Cập nhật sản phẩm
+ create proc update_Product
+(@product_id int
+,@product_name int
+,@product_price float)
+as
+begin try
+	begin tran
+	update Product set product_name=@product_name, product_price=@product_price where product_id=@product_id;
 end try
 begin catch
 	rollback tran

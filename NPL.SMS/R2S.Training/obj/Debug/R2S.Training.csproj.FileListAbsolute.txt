@@ -5,3 +5,10 @@ D:\DoAn\NPL.SMS\R2S.Training\bin\Debug\R2S.Training.exe
 D:\DoAn\NPL.SMS\R2S.Training\bin\Debug\R2S.Training.pdb
 D:\DoAn\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.exe
 D:\DoAn\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.pdb
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\bin\Debug\R2S.Training.exe.config
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\bin\Debug\R2S.Training.exe
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\bin\Debug\R2S.Training.pdb
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.csproj.AssemblyReference.cache
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.csproj.CoreCompileInputs.cache
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.exe
+D:\DoAn\ProcudureConsole\NPL.SMS\R2S.Training\obj\Debug\R2S.Training.pdb

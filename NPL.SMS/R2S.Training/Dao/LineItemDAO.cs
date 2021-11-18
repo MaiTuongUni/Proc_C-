@@ -42,6 +42,11 @@ namespace R2S.Training.Dao
             }
         }
 
+        public bool deleteLineItem(LineItem lineItem)
+        {
+            return db.deleleLineItemById(lineItem);
+        }
+
         public List<LineItem> getAllItemsByOrderId(int orderId)
         {
             try
@@ -67,6 +72,11 @@ namespace R2S.Training.Dao
             {
                 return null;
             }
+        }
+
+        public bool updateLineItem(LineItem lineItem)
+        {
+            return db.updateLineItemById(lineItem);
         }
     }
 }

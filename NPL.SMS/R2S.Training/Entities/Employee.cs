@@ -13,7 +13,7 @@ namespace R2S.Training.Entities
         private double salary;
         private int spvrId;
 
-        public Employee(int EmployeeId, String EmployeeName, int Salary, int SpvrId)
+        public Employee(int EmployeeId, String EmployeeName, double Salary, int SpvrId)
         {
             this.employeeId = EmployeeId;
             this.employeeName = EmployeeName;
