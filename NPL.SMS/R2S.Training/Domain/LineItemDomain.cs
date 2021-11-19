@@ -11,9 +11,13 @@ namespace R2S.Training.Domain
     class LineItemDomain
     {
         LineItemDAO lineItemDao = null;
+        OrderDAO orderDAO = null;
+        ProductDAO productDAO = null;
         public LineItemDomain()
         {
             lineItemDao = new LineItemDAO();
+            orderDAO = new OrderDAO();
+            productDAO = new ProductDAO();
         }
          
         public List<LineItem> getAllItemByOrderId(int orderId)
@@ -28,6 +32,18 @@ namespace R2S.Training.Domain
 
         public bool addLineItem(LineItem lineItem)
         {
+            //Kiểm tra xem mã đơn đặt hàng có trong hệ thống hay không
+            if(orderDAO.getOrderById(lineItem.getOrderId()) == null)
+            {
+                return false;
+            }
+
+            //Kiểm tra xem mã sản phẩm có tồn tại trong hệ thống hay không
+            if(productDAO.searchProductById(lineItem.getProductId())==null)
+            {
+                 return false;
+            }
+
             return lineItemDao.addLineItem(lineItem);
         }
     }

@@ -32,6 +32,10 @@ namespace R2S.Training.Domain
 
         internal bool UpdateCustomer(Customer customer)
         {
+            if (customerDao.getCustomerById(customer.getCustomerId()) == null)
+            {
+                return false;
+            }
             return customerDao.updateCustomer(customer);
         }
     }

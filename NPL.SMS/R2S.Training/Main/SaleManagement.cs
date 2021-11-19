@@ -221,7 +221,7 @@ namespace R2S.Training
                 }
                 else
                 {
-                    Console.WriteLine("Cap nhat that bai");
+                    Console.WriteLine("Cap nhat that bai, kiem tra lai ma khach hang");
                 }
             }
             catch
@@ -242,7 +242,7 @@ namespace R2S.Training
                 }
                 else
                 {
-                    Console.WriteLine("Them don dat hang that bai");
+                    Console.WriteLine("Them don dat hang that bai, kiem tra lai ma khach hang hoac nhan vien ");
                 }
             }
             catch
@@ -263,7 +263,7 @@ namespace R2S.Training
                 }
                 else
                 {
-                    Console.WriteLine("Them chi tiet don dat hang that bai");
+                    Console.WriteLine("Them chi tiet don dat hang that bai, kiem tra lai ma don dat hang hoac ma san pham");
                 }
             }
             catch
@@ -284,7 +284,7 @@ namespace R2S.Training
                 }
                 else
                 {
-                    Console.WriteLine("Cap nhat that bai");
+                    Console.WriteLine("Cap nhat that bai, kiem ttra lai ma don hang");
                 }
             }
             catch
