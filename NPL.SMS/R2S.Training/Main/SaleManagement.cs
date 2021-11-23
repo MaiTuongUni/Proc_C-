@@ -17,47 +17,47 @@ namespace R2S.Training
             //Dữ liệu truyền vào cần phải đúng 
 
             //Bai 1: Lấy tất cả khách hàng có trong hệ thống
-            getAllCustomer();
-            Console.WriteLine();
+            //getAllCustomer();
+            //Console.WriteLine();
 
-            //Bai 2: Lấy tất cả thông tin đặt hàng bở khách hàng có id là 1
-            getAllOrderByCustomerId(1);
-            Console.WriteLine();
+            ////Bai 2: Lấy tất cả thông tin đặt hàng bở khách hàng có id là 1
+            //getAllOrderByCustomerId(2);
+            //Console.WriteLine();
 
-            //Bai 3: Lấy thông tin từ thành phần đơn hàng theo mã đơn đặt hàng la 1
-            getAllItemByOrderId(1);
-            Console.WriteLine();
+            ////Bai 3: Lấy thông tin từ thành phần đơn hàng theo mã đơn đặt hàng la 1
+            //getAllItemByOrderId(1);
+            //Console.WriteLine();
 
-            //Bai 4: Tính tổng lại đơn hàng theo mã hóa đơn
-            computeOrderTotal(1);
-            Console.WriteLine();
+            ////Bai 4: Tính tổng lại đơn hàng theo mã hóa đơn
+            //computeOrderTotal(1);
+            //Console.WriteLine();
 
-            //Bai 5: Thêm một khách hàng mới
-            Customer customer = new Customer(1, "Name" + DateTime.Now.Millisecond.ToString());
-            addCutomer(customer);
-            Console.WriteLine();
+            ////Bai 5: Thêm một khách hàng mới
+            //Customer customer = new Customer(8, "Name" + DateTime.Now.Millisecond.ToString());
+            //addCutomer(customer);
+            //Console.WriteLine();
 
-            //Bai 6: Xóa 1 khách hàng từ database với mã khách hàng là 1
-            deleteCutomer(1);
-            Console.WriteLine();
+            ////Bai 6: Xóa 1 khách hàng từ database với mã khách hàng là 1
+            //deleteCutomer(1);
+            //Console.WriteLine();
 
-            //Bai 7: Cập nhật thông tin khách hàng
-            Customer customerUpdate = new Customer(1, "Name" + DateTime.Now.Millisecond.ToString());
-            updateCutomer(customerUpdate);
-            Console.WriteLine();
+            ////Bai 7: Cập nhật thông tin khách hàng
+            //Customer customerUpdate = new Customer(7, "Name" + DateTime.Now.Millisecond.ToString());
+            //updateCutomer(customerUpdate);
+            //Console.WriteLine();
 
-            //Bai 8: Thêm mới Đơn đặt hàng
-            Order order = new Order(1,DateTime.Now.ToString(),1, 1,20000);
-            addOrder(order);
-            Console.WriteLine();
+            ////Bai 8: Thêm mới Đơn đặt hàng
+            //Order order = new Order(3, DateTime.Now.ToString(), 2, 1, 20000);
+            //addOrder(order);
+            //Console.WriteLine();
 
-            //Bai 9: Thêm sản phẩm vào đơn đặt hàng
-            LineItem lineItem = new LineItem(1, 1, 1, 20000);
-            addLineItem(lineItem);
-            Console.WriteLine();
+            ////Bai 9: Thêm sản phẩm vào đơn đặt hàng
+            //LineItem lineItem = new LineItem(2, 3, 2, 20000);
+            //addLineItem(lineItem);
+            //Console.WriteLine();
 
             //Bai 10: Cập nhật tổng giá trị đơn hàng
-            updateOrderTotal(1);
+            updateOrderTotal(3);
             Console.WriteLine();
 
 
@@ -153,7 +153,7 @@ namespace R2S.Training
 
         private static void computeOrderTotal(int orderId)
         {
-            Console.WriteLine("Bai 3:");
+            Console.WriteLine("Bai 4:");
             try
             {
                 LineItemDomain lineItemDomain = new LineItemDomain();

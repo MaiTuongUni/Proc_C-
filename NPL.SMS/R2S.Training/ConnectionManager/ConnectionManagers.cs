@@ -89,21 +89,20 @@ namespace R2S.Training.ConnectionManager
         public DataTable getAllItemByOrderId(int orderid)
         {
             dt.Clear();
-            dt = this.ExecuteQueryDataSet("select * from OrderItem where order_id=" + orderid, CommandType.Text).Tables[0];
+            dt = this.ExecuteQueryDataSet("select * from LineItem where order_id=" + orderid, CommandType.Text).Tables[0];
             return dt;
         }
 
-        public DataTable computeOrderTotal(int orderId)
+        public double computeOrderTotal(int orderId)
         {
             dt.Clear();
             open();
-            comm = new SqlCommand("select * from dbo.search_ComputeOrderTotal(@order_id)", conn);
-            comm.Parameters.Add(new SqlParameter("@order_id", orderId));
-            comm.CommandType = CommandType.StoredProcedure;
-            da = new SqlDataAdapter(comm);
-            da.Fill(dt);
+            comm = new SqlCommand("select dbo.search_ComputeOrderTotal(@order_id)", conn);
+            comm.Parameters.AddWithValue("@order_id",orderId);
+            comm.ExecuteScalar();
+            double number = double.Parse(comm.ExecuteScalar().ToString());
             close();
-            return dt;
+            return number;
         }
 
         public bool addCustmer(Customer customer)

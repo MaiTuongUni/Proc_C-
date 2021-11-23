@@ -48,7 +48,7 @@ namespace R2S.Training.Dao
                         int productId = int.Parse(row["order_id"].ToString());
                         string dateTime = row["order_date"].ToString();
                         int customerId = int.Parse(row["customer_id"].ToString());
-                        int employee_id = int.Parse(row["product_id"].ToString());
+                        int employee_id = int.Parse(row["employee_id"].ToString());
                         double total = double.Parse(row["total"].ToString());
                         Order customer = new Order(productId,dateTime,customerId,employee_id,total);
                         listOrder.Add(customer);
@@ -73,7 +73,7 @@ namespace R2S.Training.Dao
                         int productId = int.Parse(dt.Rows[0]["order_id"].ToString());
                         string dateTime = dt.Rows[0]["order_date"].ToString();
                         int customerId = int.Parse(dt.Rows[0]["customer_id"].ToString());
-                        int employee_id = int.Parse(dt.Rows[0]["product_id"].ToString());
+                        int employee_id = int.Parse(dt.Rows[0]["employee_id"].ToString());
                         double total = double.Parse(dt.Rows[0]["total"].ToString());
                     order = new Order(productId, dateTime, customerId, employee_id, total);
                 }

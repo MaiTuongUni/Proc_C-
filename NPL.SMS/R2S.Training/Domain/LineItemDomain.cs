@@ -35,12 +35,14 @@ namespace R2S.Training.Domain
             //Kiểm tra xem mã đơn đặt hàng có trong hệ thống hay không
             if(orderDAO.getOrderById(lineItem.getOrderId()) == null)
             {
+                Console.WriteLine("Ma don hang khong dung");
                 return false;
             }
 
             //Kiểm tra xem mã sản phẩm có tồn tại trong hệ thống hay không
             if(productDAO.searchProductById(lineItem.getProductId())==null)
             {
+                Console.WriteLine("Ma san pham khong dung");
                  return false;
             }
 

@@ -33,7 +33,7 @@ namespace R2S.Training.Dao
                     foreach (DataRow row in dt.Rows)
                     {
                         int employeeId = int.Parse(row["employee_id"].ToString());
-                        string name = row["employee_name"].ToString();
+                        string name = row["employ_name"].ToString();
                         double salary = double.Parse(row["salary"].ToString());
                         int spvr = int.Parse(row["supervisor_id"].ToString());
                         Employee employee = new Employee(employeeId, name, salary, spvr);
@@ -57,7 +57,7 @@ namespace R2S.Training.Dao
                 if (dt.Rows.Count > 0)
                 {
                         int employeeId = int.Parse(dt.Rows[0]["employee_id"].ToString());
-                        string name = dt.Rows[0]["employee_name"].ToString();
+                        string name = dt.Rows[0]["employ_name"].ToString();
                         double salary = double.Parse(dt.Rows[0]["salary"].ToString());
                         int spvr = int.Parse(dt.Rows[0]["supervisor_id"].ToString());
                         employee = new Employee(employeeId, name, salary, spvr);

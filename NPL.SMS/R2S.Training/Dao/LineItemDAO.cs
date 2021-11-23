@@ -34,9 +34,9 @@ namespace R2S.Training.Dao
         {
             try
             {
-                return double.Parse(db.computeOrderTotal(orderId).Rows[0][0].ToString());
+                return double.Parse(db.computeOrderTotal(orderId).ToString());
             }
-            catch
+            catch(Exception ex)
             {
                 return 0;
             }
@@ -46,7 +46,6 @@ namespace R2S.Training.Dao
         {
             return db.deleleLineItemById(lineItem);
         }
-
         public List<LineItem> getAllItemsByOrderId(int orderId)
         {
             try
