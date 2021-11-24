@@ -75,7 +75,7 @@ namespace R2S.Training.ConnectionManager
         public DataTable getAllCustomer()
         {
             dt.Clear();
-            dt = this.ExecuteQueryDataSet("select customer_id, customer_name from Customer", CommandType.Text).Tables[0];
+            dt = this.ExecuteQueryDataSet("select * from Customer where customer_id in(select customer_id from Orders)", CommandType.Text).Tables[0];
             return dt;
         }
 

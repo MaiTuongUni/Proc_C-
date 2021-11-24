@@ -17,8 +17,8 @@ namespace R2S.Training
             //Dữ liệu truyền vào cần phải đúng 
 
             //Bai 1: Lấy tất cả khách hàng có trong hệ thống
-            //getAllCustomer();
-            //Console.WriteLine();
+            getAllCustomer();
+            Console.WriteLine();
 
             ////Bai 2: Lấy tất cả thông tin đặt hàng bở khách hàng có id là 1
             //getAllOrderByCustomerId(2);
@@ -77,7 +77,7 @@ namespace R2S.Training
                     Console.WriteLine("Danh sach khach hang: " + listCustomer.Count);
                     foreach (Customer customer in listCustomer)
                     {
-                        Console.WriteLine(" - " + customer.getCustomerName());
+                        Console.WriteLine(" - Ma:" +customer.getCustomerId() +"/ " +customer.getCustomerName());
                     }
                 }
                 else
